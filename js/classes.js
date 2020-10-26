@@ -1,10 +1,17 @@
-class Hamster {
-    constructor(x,y) {
-        this.x = x
-        this.y = y
+class Machine {
+    constructor() {
+        this.x = 0
+        this.y = 0
+        this.width = $canvas.width
+        this.height = $canvas.height
+        this.img = new Image()
+        this.img.src = "assets/machine.png"
+        this.img.onload = () => {
+             this.draw()
+        }
     }
    draw() {
-    console.log("placeholder")
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
    }
 
 }
@@ -52,14 +59,15 @@ class Hamster {
     constructor (x,y) {
         this.x = x
         this.y = y
-        this.width = 100 //CAMBIAR
-        this.height = 100 //CAMBIAR
-        // this.img.src = ""
-        // this.img.onload = () => {
-        //     this.draw()
-        // }
+        this.width = 165 //CAMBIAR
+        this.height = 165 //CAMBIAR
+        this.img = new Image()
+        this.img.src = "assets/hamster.png"
+        this.img.onload = () => {
+             this.draw()
+        }
     }
     draw() {
-        //ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }
 }
