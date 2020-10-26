@@ -6,6 +6,7 @@ function startGame() {
     feet.draw()
     drawMachine()
     drawHamsters()
+    drawFist()
 }
 
 
@@ -21,4 +22,9 @@ function drawHamsters() {
 function drawMachine() {
     let machine = new Machine()
     machine.draw()
+}
+
+function drawFist() {
+    let fist = new Fist(30)
+    fist.draw()
 }

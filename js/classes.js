@@ -18,17 +18,16 @@ class Machine {
 
 class Fist {
     constructor (y) {
-        this.x = $canvas.width/2 //mitad de canvas
+        this.x = 300 //mitad de canvas
         this.y = y //y va a cambiar
-        // this.img.src = ""
-        // this.img.onload = () => {
-        //     this.draw()
-        // }
+        this.img = new Image()
+        this.img.src = "assets/puño.png"
+        this.img.onload = () => {
+             this.draw()
+         }
     }
     draw() {
-        //BORRAR ESTO
-        console.log("placeholder")
-        //ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }
 }
 
@@ -38,6 +37,7 @@ class Feet {
         this.width = 100 //CAMBIAR
         this.x = x
         this.y = $canvas.height-this.height
+        // this.img = new Image()
         // this.img.src = ""
         // this.img.onload = () => {
         //     this.draw()
