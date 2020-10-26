@@ -1,17 +1,5 @@
 //DOCUMENT FOR ALL THE MAIN FUNCTIONS
 //globals
-let hamsterLeft = new Hamster(100,200)
-let hamsterCenter = new Hamster(315, 200)
-let hamsterRight = new Hamster(530, 200)
-
-function startGame() {
-    console.log('started')
-    let feet = new Feet(10)
-    feet.draw()
-    drawMachine()
-    drawHamsters()
-    drawFist()
-}
 
 
 function drawHamsters() {

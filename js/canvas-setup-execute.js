@@ -8,3 +8,6 @@ window.onload = () => {
         startGame()
     }
 }
+
+let intervalId
+let frames = 0
