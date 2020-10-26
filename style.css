@@ -16,6 +16,7 @@ body button {
     font-family: 'Press Start 2P', cursive;
     color: yellow;
     background-color: green;
+    cursor: pointer;
     border: none;
     padding: 10px;
     border-radius: 10px;
