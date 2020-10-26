@@ -1,2 +1,2 @@
-const $context = document.querySelector("canvvvvvvvvvvvas")
+const $context = document.querySelector("canvas")
 //prueba

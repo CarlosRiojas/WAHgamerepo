@@ -1,4 +1,25 @@
-#canvas {
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+html {
+    font-family: 'Press Start 2P', cursive;
+    background-color: black;
+    text-align: center;
+}
+
+body #canvas {
     float: center;
-    border: 1px solid black;
+    border: 1px solid rgb(32, 32, 32);
+}
+body button {
+    font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
+    color: yellow;
+    background-color: red;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px 0px 40px;
+}
+h2 {
+    color: white;
 }
