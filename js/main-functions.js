@@ -1,4 +1,8 @@
 //DOCUMENT FOR ALL THE MAIN FUNCTIONS
+//globals
+let hamsterLeft = new Hamster(100,200)
+let hamsterCenter = new Hamster(315, 200)
+let hamsterRight = new Hamster(530, 200)
 
 function startGame() {
     console.log('started')
@@ -11,11 +15,8 @@ function startGame() {
 
 
 function drawHamsters() {
-    let hamsterLeft = new Hamster(100,200)
     hamsterLeft.draw()
-    let hamsterCenter = new Hamster(315, 200)
     hamsterCenter.draw()
-    let hamsterRight = new Hamster(530, 200)
     hamsterRight.draw()
 }
 
@@ -32,11 +33,11 @@ function drawFist() {
 function hit(select) {
     switch (select) {
         case "LEFT":
-            return 
+            return hamsterLeft.PressHit()
         case "RIGHT":
-            return
+            return  hamsterRight.PressHit()
         case "CENTER":
-            return
+            return  hamsterCenter.PressHit()
         default:
             break;
     }

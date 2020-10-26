@@ -66,8 +66,22 @@ class Hamster {
         this.img.onload = () => {
              this.draw()
         }
+        this.alive = false
+        
     }
     draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }
+   hitCheck() {
+        if (this.alive = false){
+            this.y = -100
+        }else{
+            this.y = +100
+        }
+    }
+    PressHit(){
+        this.alive = false
+    }
+
+
 }
