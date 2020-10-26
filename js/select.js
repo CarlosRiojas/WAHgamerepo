@@ -3,13 +3,13 @@
 document.onkeydown = e => {
     switch (e.key) {
         case "ArrowLeft":
-            return console.log("left");
+            return hit("LEFT")
         case "ArrowRight":
-            return console.log("right"); 
+            return hit("RIGHT") 
         case "ArrowUp":
-            return console.log("up"); 
+            return hit("UP"); 
         case "ArrowDown":
-            return console.log("down"); 
+            return; 
         default:
             break;
     }

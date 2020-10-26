@@ -28,3 +28,16 @@ function drawFist() {
     let fist = new Fist(30)
     fist.draw()
 }
+
+function hit(select) {
+    switch (select) {
+        case "LEFT":
+            return 
+        case "RIGHT":
+            return
+        case "CENTER":
+            return
+        default:
+            break;
+    }
+}
