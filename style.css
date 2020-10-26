@@ -9,12 +9,13 @@ html {
 body #canvas {
     float: center;
     border: 1px solid rgb(32, 32, 32);
+    /* Change border color */
 }
 body button {
     font-size: 20px;
     font-family: 'Press Start 2P', cursive;
     color: yellow;
-    background-color: red;
+    background-color: green;
     border: none;
     padding: 10px;
     border-radius: 10px;
@@ -22,4 +23,7 @@ body button {
 }
 h2 {
     color: white;
+}
+footer p {
+    color: green
 }
