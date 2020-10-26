@@ -59,8 +59,8 @@ class Hamster {
     constructor (x,y) {
         this.x = x
         this.y = y
-        this.width = 165 //CAMBIAR
-        this.height = 165 //CAMBIAR
+        this.width = 170 
+        this.height = 170
         this.img = new Image()
         this.img.src = "assets/hamster.png"
         this.img.onload = () => {
