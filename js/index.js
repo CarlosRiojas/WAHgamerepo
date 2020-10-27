@@ -4,7 +4,6 @@ let frames = 0
 
 function updateGame() {
     frames++
-    
     clearCanvas()
     persona.draw()
     machine.draw()
@@ -16,7 +15,7 @@ function updateGame() {
     goDown()
     randomBox()
     printScore()
-    FistTime()
+    FistDown()
 }
 
 function startGame() {

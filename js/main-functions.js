@@ -1,6 +1,7 @@
 //DOCUMENT FOR ALL THE MAIN FUNCTIONS
 //globals
 let ratio = 150
+let scorecounter = 0
 //game main logic starts
 
 function clearCanvas(){
@@ -38,48 +39,38 @@ function goDown() {
     } else return
 }
 
+//CUSTOM GOOGLE FONTS DOCUMENTATION:
+//https://hacks.mozilla.org/2016/06/webfont-preloading-for-html5-games/
+const FONT_NAME = 'Press Start 2P'
 let score = 0
 
 function printScore() {
-    ctx.fillStyle = "white"
-    ctx.font = "30px PressStart"
+    ctx.fillStyle = "yellow"
+    ctx.font = `30px "${FONT_NAME}"`
     ctx.textAlign = "center"
-    // if (hamsterLeft.hit() || hamsterCenter.hit() || hamsterRight.hit()){
-    //     score++
-    // }
-    ctx.fillText(`Score: ${score}`, $canvas.width/2, 200)
+    ctx.fillText(`SCORE: ${score}`, $canvas.width/2, 125)
 }
+WebFont.load({
+    google: {families: [FONT_NAME]},
+  active: renderText
+});
 
-function FistTime() {
-let scorecounter = scorecounter+score
-    if(scorecounter = 3){
 
-            let downRatio = 50
-            let counter  = 4
-            for (let i = 0;i < counter;i++){
-                Fist.x += 5 
-                Fist.x -= 5
-            }
-                if(frames > 200 && frames % downRatio === 0) {
-                    Fist.down()}else{
-                        return
-                    } 
-        
-       scorecounter= 0 
+function FistDown(){
+    scorecounter = scorecounter+score
+if(scorecounter = 3){ 
+    let downRatio = 50
+    let counter  = 4
+    if(frames > 200 && frames % downRatio === 0){ 
+    for (let i = 0;i < counter;i++){
+        Fist.x += 5 
+        Fist.x -= 5
     }
-    ctx.fillText(`FIST TIME!`, $canvas.width/2, 160)
+            Fist.down()}else{
+          Fist.y = 325
+     scorecounter = 0
+     }
+  
+  }
 }
 
-// function FistDown(){
-
-//     let downRatio = 50
-//     let counter  = 4
-//     for (let i = 0;i < counter;i++){
-//         Fist.x += 5 
-//         Fist.x -= 5
-//     }
-//         if(frames > 200 && frames % downRatio === 0) {
-//             Fist.down()}else{
-//                 return
-//             } 
-// }
