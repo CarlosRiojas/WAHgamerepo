@@ -42,7 +42,7 @@ function randomBox() {
 }
 
 function goDown() {
-    let downRatio = 
+    let downRatio = 50
     if (hamsterLeft.y === 250) {
         if(frames > 200 && frames % downRatio === 0) {hamsterLeft.down()}
     } else if (hamsterCenter.y === 250) {
@@ -50,5 +50,19 @@ function goDown() {
     } else if (hamsterRight.y === 250) {
         if(frames > 200 && frames % downRatio === 0) {hamsterRight.down()}
     } else return
+}
+
+function FistDown(){
+
+    let downRatio = 50
+    let counter  = 4
+    for (let i = 0;i < counter;i++){
+        Fist.x += 5 
+        Fist.x -= 5
+    }
+        if(frames > 200 && frames % downRatio === 0) {
+            Fist.down()}else{
+                return
+            } 
 }
 
