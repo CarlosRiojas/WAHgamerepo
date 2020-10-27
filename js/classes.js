@@ -92,16 +92,6 @@ class Hamster {
     down() {
         this.y = 350
     }
-    // hitCheck() {
-    //     if (this.alive = false){
-    //         this.y -= 100
-    //     }else{
-    //         this.y += 100
-    //     }
-    // }
-    // PressHit(){
-    //     return this.alive = false
-    // }
 }
 
 //Instances 
@@ -113,13 +103,5 @@ const fist = new Fist(325) //Max: 500, Min: 325
 const machine = new Machine()
 const persona = new Persona()
 const machineFront = new MachineFront()
-
-/*  
-
-
-
-
-
-*/
 
 
