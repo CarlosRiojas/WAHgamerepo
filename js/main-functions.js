@@ -3,20 +3,6 @@
 let ratio = 150
 //game main logic starts
 
-function updateGame() {
-    frames++
-    clearCanvas()
-    persona.draw()
-    machine.draw()
-    fist.draw()
-    hamsterLeft.draw()
-    hamsterCenter.draw()
-    hamsterRight.draw()
-    machineFront.draw()
-    goDown()
-    randomBox()
-}
-
 function clearCanvas(){
     ctx.clearRect(0,0,$canvas.width,$canvas.height)
 }
@@ -50,4 +36,15 @@ function goDown() {
     } else if (hamsterRight.y === 250) {
         if(frames > 200 && frames % downRatio === 0) {hamsterRight.down()}
     } else return
+}
+
+let score = 0
+function printScore() {
+    ctx.fillStyle = "white"
+    ctx.font = "30px PressStart"
+    ctx.textAlign = "center"
+    // if (hamsterLeft.hit() || hamsterCenter.hit() || hamsterRight.hit()){
+    //     score++
+    // }
+    ctx.fillText(`Score: ${score}`, $canvas.width/2, 200)
 }

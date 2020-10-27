@@ -50,6 +50,9 @@ class Fist {
     draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }
+    fistMovement() {
+        this.y = 500
+    }
 }
 
 class Persona {
@@ -94,6 +97,7 @@ class Hamster {
     hit() {
         console.log("hit")
         this.y = 350
+        // return true
     }
 }
 
