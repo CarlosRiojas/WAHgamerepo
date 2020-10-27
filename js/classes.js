@@ -86,7 +86,6 @@ class Hamster {
     }
     up() {
         this.y = 250
-
     }
     down() {
         this.y = 350
