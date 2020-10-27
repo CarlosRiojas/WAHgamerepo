@@ -4,58 +4,18 @@ let ratio = 150
 //game main logic starts
 
 function updateGame() {
-    // console.log('started')
     frames++
     clearCanvas()
     persona.draw()
     machine.draw()
+    fist.draw()
     hamsterLeft.draw()
     hamsterCenter.draw()
     hamsterRight.draw()
-    fist.draw()
     machineFront.draw()
-
     goDown()
     randomBox()
 }
-// function drawHamsters() { //UP: 200, DOWN: 350
-    
-   
-// }
-
-// function drawMachine() {
-//      let machine = new Machine()
-//      machine.draw()
-// }
-
-// function drawMachineFront() {
-//     let machineFront = new MachineFront()
-//     machineFront.draw()
-// }
-
-// function drawFist() { //AT MIN POSITION
-//      //Max: 500, Min: 325
-    
-// }
-
-// function drawPersona() {
-    
-    
-// }
-
-// function hit(select) {
-//     switch (select) {
-//         case "LEFT":
-//             return hamsterLeft.PressHit()
-//         case "RIGHT":
-//             return  hamsterRight.PressHit()
-//         case "CENTER":
-//             return  hamsterCenter.PressHit()
-//         default:
-//             break;
-//     }
-// }
-//prueba
 
 function clearCanvas(){
     ctx.clearRect(0,0,$canvas.width,$canvas.height)
@@ -82,7 +42,7 @@ function randomBox() {
 }
 
 function goDown() {
-    let downRatio = 50
+    let downRatio = 25
     if (hamsterLeft.y === 250) {
         if(frames > 200 && frames % downRatio === 0) {hamsterLeft.down()}
     } else if (hamsterCenter.y === 250) {
