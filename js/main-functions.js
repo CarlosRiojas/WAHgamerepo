@@ -6,13 +6,15 @@ let hamsterRight = new Hamster(530, 200)
 
 function startGame() {
     console.log('started')
-    let feet = new Feet(10)
-    feet.draw()
     drawMachine()
+    // drawPersona()
     drawHamsters()
     drawFist()
 }
-
+function drawPersona() {
+    let persona = new Persona(300)
+    persona.draw()
+}
 
 function drawHamsters() {
     hamsterLeft.draw()

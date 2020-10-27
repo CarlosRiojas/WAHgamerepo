@@ -31,30 +31,6 @@ class Fist {
     }
 }
 
-class Feet {
-    constructor (x) {
-        this.height = 100 //CAMBIAR
-        this.width = 100 //CAMBIAR
-        this.x = x
-        this.y = $canvas.height-this.height
-        // this.img = new Image()
-        // this.img.src = ""
-        // this.img.onload = () => {
-        //     this.draw()
-        // }
-    }
-    draw() {
-        
-        //BORRAR ESTO
-        ctx.fillStyle = 'blue';
-        ctx.fillRect(this.x, this.y, this.width, this.height)
-        ctx.fillStyle = "white"
-        ctx.fillText("Pies",this.x,this.y,this.width, this.height)
-        console.log('drawn')
-        //ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
-    }
-}
-
 class Hamster {
     constructor (x,y) {
         this.x = x
@@ -74,14 +50,29 @@ class Hamster {
     }
    hitCheck() {
         if (this.alive = false){
-            this.y = -100
+            this.y -= 100
         }else{
-            this.y = +100
+            this.y += 100
         }
     }
     PressHit(){
         this.alive = false
     }
+}
 
-
+class Persona {
+    constructor(x) {
+        this.x = x
+        this.y = 600
+        this.width = 400
+        this.height = 200
+        this.img = new Image()
+        this.img.src = "assets/persona.png"
+        this.img.onload = () => {
+            this.draw()
+       }
+   }
+   draw() {
+       ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+    }
 }
