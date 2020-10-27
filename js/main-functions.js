@@ -11,6 +11,7 @@ function updateGame() {
     drawFist()
     drawHamsters()
     randomBox()
+    
 }
 
 
@@ -62,12 +63,15 @@ function randomBox() {
     switch(RandomMovement){
         case 0:
             hamsterLeft.alive = true
+            hamsterLeft.hitCheck()
             break;
         case 1:
             hamsterRight.alive = true
+            hamsterRight.hitCheck()
             break;
         case 2:
             hamsterCenter.alive = true
+            hamsterCenter.hitCheck()
             break;
         default:
             break;   
