@@ -50,8 +50,13 @@ class Fist {
     draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }
-    fistMovement() {
-        this.y = 500
+    punch() {
+    let counter  = 4
+    for (let i = 0;i < counter;i++){
+        this.x += 5 
+        this.x -= 5
+     }
+     this.y = 500
     }
 }
 

@@ -15,7 +15,7 @@ function updateGame() {
     goDown()
     randomBox()
     printScore()
-    FistDown()
+    
 }
 
 function startGame() {

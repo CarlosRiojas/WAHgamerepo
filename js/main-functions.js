@@ -1,7 +1,7 @@
 //DOCUMENT FOR ALL THE MAIN FUNCTIONS
 //globals
 let ratio = 150
-let scorecounter = 0
+
 //game main logic starts
 
 function clearCanvas(){
@@ -57,21 +57,20 @@ WebFont.load({
 
 
 function FistDown(){
-    scorecounter = scorecounter+score
-    if(scorecounter === 3){ 
-        let downRatio = 50
-        let counter  = 4
-        if(frames > 200 && frames % downRatio === 0){ 
-            for (let i = 0;i < counter;i++){
-                Fist.x += 5 
-                Fist.x -= 5
-            }
-            Fist.down()
+if(score % 3 === 0){ 
 
-            } else {
-                Fist.y = 325
-                scorecounter = 0
-            }
+    fist.punch()
+    // let downRatio = 50
+    // let counter  = 4
+    // if(frames > 200 && frames % downRatio === 0){ 
+    // for (let i = 0;i < counter;i++){
+    //     Fist.x += 5 
+    //     Fist.x -= 5
+    // }
+    //     }else{
+    //       Fist.y = 325
+    //  scorecounter = 0
+    //  }
   
   }
 }
