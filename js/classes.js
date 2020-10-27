@@ -16,7 +16,6 @@ class Machine {
    draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
    }
-
 }
 
 class Fist {
