@@ -9,5 +9,5 @@ window.onload = () => {
     }
 }
 
-let intervalId
+let intervalId = 0
 let frames = 0

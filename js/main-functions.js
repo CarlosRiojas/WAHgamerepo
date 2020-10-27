@@ -18,6 +18,13 @@ function drawFist() {
     fist.draw()
 }
 
+
+
+function drawPersona() {
+ let Drawfeet = new Feet()
+   Drawfeet.draw()
+}
+
 function hit(select) {
     switch (select) {
         case "LEFT":
@@ -31,3 +38,7 @@ function hit(select) {
     }
 }
 //prueba
+
+function clearCanvas(){
+    ctx.clearRect(0,0,$canvas.width,$canvas.height)
+}
