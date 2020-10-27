@@ -57,10 +57,10 @@ class Fist {
 
 class Persona {
     constructor (x) {
-        this.height = 300 //CAMBIAR
-        this.width = 300 //CAMBIAR
-        this.x = ($canvas.width - this.width)/2
-        this.y = ($canvas.height - this.height +70)
+        this.height = 150 //CAMBIAR
+        this.width = 800 //CAMBIAR
+        this.x = 0
+        this.y = ($canvas.height - this.height) + 15
         this.img = new Image()
         this.img.src = "assets/persona.png"
         this.img.onload = () => {
@@ -108,7 +108,7 @@ const hamsterCenter = new Hamster(315)
 const hamsterRight = new Hamster(530)
 const fist = new Fist(325) //Max: 500, Min: 325
 const machine = new Machine()
-const persona = new Persona(200)
+const persona = new Persona(0)
 const machineFront = new MachineFront()
 
 

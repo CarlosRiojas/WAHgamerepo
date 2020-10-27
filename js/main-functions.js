@@ -44,9 +44,9 @@ const FONT_NAME = 'Press Start 2P'
 let score = 0
 function printScore() {
     ctx.fillStyle = "yellow"
-    ctx.font = `30px "${FONT_NAME}"`
+    ctx.font = `20px "${FONT_NAME}"`
     ctx.textAlign = "center"
-    ctx.fillText(`SCORE: ${score}`, $canvas.width/2, 125)
+    ctx.fillText(`SCORE: ${score}`, $canvas.width/2, 120)
 }
 WebFont.load({
     google: {families: [FONT_NAME]},
