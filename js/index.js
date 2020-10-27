@@ -11,6 +11,7 @@ function startGame() {
     drawMachine()
     drawHamsters()
     drawFist()
+    randomBox()
 }
 
 function start() {

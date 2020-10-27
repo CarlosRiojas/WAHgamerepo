@@ -1,3 +1,8 @@
+//GLOBAL
+
+let ratio = 150
+
+
 class Machine {
     constructor() {
         this.x = 0
@@ -67,9 +72,9 @@ class Hamster {
     }
    hitCheck() {
         if (this.alive = false){
-            this.y = -100
+            this.y -= 100
         }else{
-            this.y = +100
+            this.y += 100
         }
     }
     PressHit(){
@@ -78,6 +83,36 @@ class Hamster {
 
 
 }
+
+function randomBox() {
+    if (frames % ratio === 0){ 
+    const RandomMovement= Math.floor(Math.random() * 3)
+   switch(RandomMovement){
+         case 0:
+            hamsterLeft.alive = true
+            break;
+        case 1:
+            hamsterRight.alive = true
+            break;
+        case 2:
+            hamsterCenter.alive = true
+            break;
+         default:
+             break;   
+   }
+ 
+  }
+  
+}
+
+
+/*  
+
+
+
+
+
+*/
 
 let hamsterLeft = new Hamster(100,200)
 let hamsterCenter = new Hamster(315, 200)
