@@ -70,6 +70,7 @@ class Persona {
     draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }
+    
 }
 
 class Hamster {
@@ -99,6 +100,8 @@ class Hamster {
         this.y = 350
         // return true
     }
+    
+    
 }
 
 //Instances 

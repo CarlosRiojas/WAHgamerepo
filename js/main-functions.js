@@ -1,6 +1,7 @@
 //DOCUMENT FOR ALL THE MAIN FUNCTIONS
 //globals
 let ratio = 150
+let scorecounter = 0
 //game main logic starts
 
 function clearCanvas(){
@@ -42,6 +43,7 @@ function goDown() {
 //https://hacks.mozilla.org/2016/06/webfont-preloading-for-html5-games/
 const FONT_NAME = 'Press Start 2P'
 let score = 0
+
 function printScore() {
     ctx.fillStyle = "yellow"
     ctx.font = `20px "${FONT_NAME}"`
@@ -54,4 +56,23 @@ WebFont.load({
 });
 
 
+function FistDown(){
+    scorecounter = scorecounter+score
+    if(scorecounter === 3){ 
+        let downRatio = 50
+        let counter  = 4
+        if(frames > 200 && frames % downRatio === 0){ 
+            for (let i = 0;i < counter;i++){
+                Fist.x += 5 
+                Fist.x -= 5
+            }
+            Fist.down()
+
+            } else {
+                Fist.y = 325
+                scorecounter = 0
+            }
+  
+  }
+}
 
