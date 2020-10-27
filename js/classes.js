@@ -57,10 +57,10 @@ class Fist {
 
 class Persona {
     constructor (x) {
-        this.height = 200 //CAMBIAR
-        this.width = 200 //CAMBIAR
-        this.x = x
-        this.y = ($canvas.height - this.height)
+        this.height = 300 //CAMBIAR
+        this.width = 300 //CAMBIAR
+        this.x = ($canvas.width - this.width)/2
+        this.y = ($canvas.height - this.height +70)
         this.img = new Image()
         this.img.src = "assets/persona.png"
         this.img.onload = () => {

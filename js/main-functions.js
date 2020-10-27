@@ -38,13 +38,20 @@ function goDown() {
     } else return
 }
 
+//CUSTOM GOOGLE FONTS DOCUMENTATION:
+//https://hacks.mozilla.org/2016/06/webfont-preloading-for-html5-games/
+const FONT_NAME = 'Press Start 2P'
 let score = 0
 function printScore() {
-    ctx.fillStyle = "white"
-    ctx.font = "30px PressStart"
+    ctx.fillStyle = "yellow"
+    ctx.font = `30px "${FONT_NAME}"`
     ctx.textAlign = "center"
-    // if (hamsterLeft.hit() || hamsterCenter.hit() || hamsterRight.hit()){
-    //     score++
-    // }
-    ctx.fillText(`Score: ${score}`, $canvas.width/2, 200)
+    ctx.fillText(`SCORE: ${score}`, $canvas.width/2, 125)
 }
+WebFont.load({
+    google: {families: [FONT_NAME]},
+  active: renderText
+});
+
+
+
