@@ -42,7 +42,7 @@ function randomBox() {
 }
 
 function goDown() {
-    let downRatio = 25
+    let downRatio = 
     if (hamsterLeft.y === 250) {
         if(frames > 200 && frames % downRatio === 0) {hamsterLeft.down()}
     } else if (hamsterCenter.y === 250) {
@@ -51,3 +51,4 @@ function goDown() {
         if(frames > 200 && frames % downRatio === 0) {hamsterRight.down()}
     } else return
 }
+

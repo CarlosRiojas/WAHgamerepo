@@ -67,6 +67,7 @@ class Persona {
     draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }
+    
 }
 
 class Hamster {
@@ -92,6 +93,10 @@ class Hamster {
     down() {
         this.y = 350
     }
+    hit() {
+        this.y = 350
+    }
+    
 }
 
 //Instances 

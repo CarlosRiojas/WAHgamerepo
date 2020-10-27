@@ -3,11 +3,11 @@
 document.onkeydown = e => {
     switch (e.key) {
         case "ArrowLeft":
-            return hit("LEFT")
+            return hamsterLeft.hit()
         case "ArrowRight":
-            return hit("RIGHT") 
+            return hamsterRight.hit() 
         case "ArrowUp":
-            return hit("UP"); 
+            return hamsterCenter.hit(); 
         case "ArrowDown":
             return; 
         default:
