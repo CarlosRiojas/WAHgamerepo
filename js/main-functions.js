@@ -3,20 +3,6 @@
 let ratio = 150
 //game main logic starts
 
-function updateGame() {
-    frames++
-    clearCanvas()
-    persona.draw()
-    machine.draw()
-    fist.draw()
-    hamsterLeft.draw()
-    hamsterCenter.draw()
-    hamsterRight.draw()
-    machineFront.draw()
-    goDown()
-    randomBox()
-}
-
 function clearCanvas(){
     ctx.clearRect(0,0,$canvas.width,$canvas.height)
 }
@@ -52,17 +38,48 @@ function goDown() {
     } else return
 }
 
-function FistDown(){
+let score = 0
 
-    let downRatio = 50
-    let counter  = 4
-    for (let i = 0;i < counter;i++){
-        Fist.x += 5 
-        Fist.x -= 5
-    }
-        if(frames > 200 && frames % downRatio === 0) {
-            Fist.down()}else{
-                return
-            } 
+function printScore() {
+    ctx.fillStyle = "white"
+    ctx.font = "30px PressStart"
+    ctx.textAlign = "center"
+    // if (hamsterLeft.hit() || hamsterCenter.hit() || hamsterRight.hit()){
+    //     score++
+    // }
+    ctx.fillText(`Score: ${score}`, $canvas.width/2, 200)
 }
 
+function FistTime() {
+let scorecounter = scorecounter+score
+    if(scorecounter = 3){
+
+            let downRatio = 50
+            let counter  = 4
+            for (let i = 0;i < counter;i++){
+                Fist.x += 5 
+                Fist.x -= 5
+            }
+                if(frames > 200 && frames % downRatio === 0) {
+                    Fist.down()}else{
+                        return
+                    } 
+        
+       scorecounter= 0 
+    }
+    ctx.fillText(`FIST TIME!`, $canvas.width/2, 160)
+}
+
+// function FistDown(){
+
+//     let downRatio = 50
+//     let counter  = 4
+//     for (let i = 0;i < counter;i++){
+//         Fist.x += 5 
+//         Fist.x -= 5
+//     }
+//         if(frames > 200 && frames % downRatio === 0) {
+//             Fist.down()}else{
+//                 return
+//             } 
+// }

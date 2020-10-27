@@ -50,9 +50,8 @@ class Fist {
     draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }
-    down() {
-        console.log("down")
-        this.y = 350
+    fistMovement() {
+        this.y = 500
     }
 }
 
@@ -99,6 +98,7 @@ class Hamster {
     hit() {
         console.log("hit")
         this.y = 350
+        // return true
     }
     
     
