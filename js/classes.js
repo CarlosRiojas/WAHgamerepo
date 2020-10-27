@@ -10,12 +10,29 @@ class Machine {
         this.img = new Image()
         this.img.src = "assets/machine.png"
         this.img.onload = () => {
-             this.draw()
+            this.draw()
         }
     }
-   draw() {
+    draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
    }
+}
+
+class MachineFront {
+    constructor() {
+        this.x = 0
+        this.y = 0
+        this.width = $canvas.width
+        this.height = $canvas.height
+        this.img = new Image()
+        this.img.src = "assets/machineFront.png"
+        this.img.onload = () => {
+            this.draw()
+        }
+    }
+    draw() {
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+    }
 }
 
 class Fist {
@@ -53,9 +70,9 @@ class Persona {
 }
 
 class Hamster {
-    constructor (x,y) {
+    constructor (x) {
         this.x = x
-        this.y = y
+        this.y = 350 //INITIAL
         this.width = 170 
         this.height = 170
         this.img = new Image()
@@ -63,23 +80,39 @@ class Hamster {
         this.img.onload = () => {
              this.draw()
         }
-        this.alive = false
+        // this.alive = false
     }
     draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }
-    hitCheck() {
-        if (this.alive = false){
-            this.y -= 100
-        }else{
-            this.y += 100
-        }
+    up() {
+        this.y = 250
+
     }
-    PressHit(){
-        return this.alive = false
+    down() {
+        this.y = 350
     }
+    // hitCheck() {
+    //     if (this.alive = false){
+    //         this.y -= 100
+    //     }else{
+    //         this.y += 100
+    //     }
+    // }
+    // PressHit(){
+    //     return this.alive = false
+    // }
 }
 
+//Instances 
+
+const hamsterLeft = new Hamster(100) 
+const hamsterCenter = new Hamster(315)
+const hamsterRight = new Hamster(530)
+const fist = new Fist(325) //Max: 500, Min: 325
+const machine = new Machine()
+const persona = new Persona()
+const machineFront = new MachineFront()
 
 /*  
 
