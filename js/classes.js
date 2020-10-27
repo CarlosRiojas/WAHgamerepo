@@ -1,3 +1,6 @@
+//GLOBAL
+
+
 class Machine {
     constructor() {
         this.x = 0
@@ -18,13 +21,32 @@ class Machine {
 
 class Fist {
     constructor (y) {
-        this.x = 300 //mitad de canvas
+        this.width = 300
+        this.height = 300
+        this.x = ($canvas.width - this.width)/2 //mitad de canvas
         this.y = y //y va a cambiar
         this.img = new Image()
         this.img.src = "assets/puño.png"
         this.img.onload = () => {
-             this.draw()
-         }
+            this.draw()
+        }
+    }
+    draw() {
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+    }
+}
+
+class Persona {
+    constructor (x) {
+        this.height = 100 //CAMBIAR
+        this.width = 100 //CAMBIAR
+        this.x = 200
+        this.y = 400
+        this.img = new Image()
+        this.img.src = "assets/persona.png"
+        this.img.onload = () => {
+            this.draw()
+        }
     }
     draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
@@ -60,19 +82,13 @@ class Hamster {
     }
 }
 
-class Persona {
-    constructor(x) {
-        this.x = x
-        this.y = 600
-        this.width = 400
-        this.height = 200
-        this.img = new Image()
-        this.img.src = "assets/persona.png"
-        this.img.onload = () => {
-            this.draw()
-       }
-   }
-   draw() {
-       ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
-    }
-}
+
+/*  
+
+
+
+
+
+*/
+
+
