@@ -37,8 +37,8 @@ class MachineFront {
 
 class Fist {
     constructor (y) {
-        this.width = 300
-        this.height = 300
+        this.width = 250
+        this.height = 250
         this.x = ($canvas.width - this.width)/2 //mitad de canvas
         this.y = y //y va a cambiar
         this.img = new Image()
@@ -54,10 +54,10 @@ class Fist {
 
 class Persona {
     constructor (x) {
-        this.height = 100 //CAMBIAR
-        this.width = 100 //CAMBIAR
-        this.x = 200
-        this.y = 400
+        this.height = 200 //CAMBIAR
+        this.width = 200 //CAMBIAR
+        this.x = x
+        this.y = ($canvas.height - this.height)
         this.img = new Image()
         this.img.src = "assets/persona.png"
         this.img.onload = () => {
@@ -80,7 +80,6 @@ class Hamster {
         this.img.onload = () => {
              this.draw()
         }
-        // this.alive = false
     }
     draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
@@ -101,7 +100,7 @@ const hamsterCenter = new Hamster(315)
 const hamsterRight = new Hamster(530)
 const fist = new Fist(325) //Max: 500, Min: 325
 const machine = new Machine()
-const persona = new Persona()
+const persona = new Persona(200)
 const machineFront = new MachineFront()
 
 
