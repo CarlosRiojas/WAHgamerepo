@@ -2,10 +2,9 @@
 //globals
 let ratio = 150
 //game main logic starts
-function startGame() {
+function updateGame() {
     console.log('started')
     frames++
-    start()
     clearCanvas()
     drawPersona()
     drawMachine()
@@ -56,8 +55,6 @@ function hit(select) {
 function clearCanvas(){
     ctx.clearRect(0,0,$canvas.width,$canvas.height)
 }
-
-
 
 function randomBox() {
     if (frames % ratio === 0){ 

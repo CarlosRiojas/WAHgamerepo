@@ -64,12 +64,11 @@ class Hamster {
              this.draw()
         }
         this.alive = false
-        
     }
     draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }
-   hitCheck() {
+    hitCheck() {
         if (this.alive = false){
             this.y -= 100
         }else{
@@ -77,7 +76,7 @@ class Hamster {
         }
     }
     PressHit(){
-        this.alive = false
+        return this.alive = false
     }
 }
 
