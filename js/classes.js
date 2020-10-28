@@ -92,7 +92,7 @@ class Persona {
     constructor (x) {
         this.height = 150 //CAMBIAR
         this.width = 800 //CAMBIAR
-        this.x = 0
+        this.x = x
         this.y = ($canvas.height - this.height) + 15
         this.velX =0
         this.img = new Image()
@@ -107,13 +107,13 @@ class Persona {
     }
     moveAway(){
         if(this.away === false && this.x <= 120){ 
-        this.away = false
+        this.away = true
         this.velX += gravity
         this.x += this.velX 
         if(this.x = 120){
             console.log("feet return")
             this.velX = 0
-            if(frames % feetRatio === 0){
+            if(frames % feetRatio == 0){
                 this.away = false
                 ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
             }
@@ -130,12 +130,12 @@ class Persona {
         this.away = true
         console.log("GET AWAY")
         this.velX += gravity
-        this.x += this.velX 
+        this.x -= this.velX 
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }else{
         this.away= true
         this.velX= 0
-        this.y = 325
+        this.x = 325
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }
   } 
