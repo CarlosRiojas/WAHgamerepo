@@ -1,5 +1,8 @@
 //GLOBAL
 let gravity = 1.5
+let hamsterUP= 240
+let hamsterDOWN = 315
+
 
 class Machine {
     constructor() {
@@ -8,7 +11,7 @@ class Machine {
         this.width = $canvas.width
         this.height = $canvas.height
         this.img = new Image()
-        this.img.src = "assets/machine.png"
+        this.img.src = "assets/machineNOpixel.png"
         this.img.onload = () => {
             this.draw()
         }
@@ -25,7 +28,7 @@ class MachineFront {
         this.width = $canvas.width
         this.height = $canvas.height
         this.img = new Image()
-        this.img.src = "assets/machineFront.png"
+        this.img.src = "assets/machineFrontNopixel.png"
         this.img.onload = () => {
             this.draw()
         }
@@ -89,7 +92,7 @@ class Persona {
 class Hamster {
     constructor (x) {
         this.x = x
-        this.y = 340 //INITIAL
+        this.y = hamsterDOWN //INITIAL
         this.width = 170 
         this.height = 170
         this.velY = 0
@@ -101,7 +104,7 @@ class Hamster {
         }
     }
     draw() {
-        if (this.wasHit === true && this.y < 340) {
+        if (this.wasHit === true && this.y < hamsterDOWN-8) {
             this.velY += gravity
             this.y += this.velY
             ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
@@ -111,12 +114,12 @@ class Hamster {
         }
     }
     up() {
-        this.y = 250
+        this.y = hamsterUP
         this.wasHit = false
     }
     down() {
         console.log("down")
-        this.y = 340
+        this.y = hamsterDOWN
         this.wasHit = false
     }
     hit() {
@@ -129,9 +132,9 @@ class Hamster {
 
 //Instances 
 
-const hamsterLeft = new Hamster(100) 
-const hamsterCenter = new Hamster(315)
-const hamsterRight = new Hamster(530)
+const hamsterLeft = new Hamster(110) 
+const hamsterCenter = new Hamster(312)
+const hamsterRight = new Hamster(515)
 const fist = new Fist(325) //Max: 500, Min: 325
 const machine = new Machine()
 const persona = new Persona(0)
