@@ -66,11 +66,6 @@ class Fist {
                 }
             }
             ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
-        //    }else if(this.hidden === true && this.y === 500){ //mantiene el puño
-        //     this.hidden = true
-        //     this.velY = 0
-        //     this.y = 500
-        //     ctx.drawImage(this.img, this.x, this.y, this.width, this.height)  
         } else if (this.hidden === true && this.y > 325) {//regresa el puño
             this.velY = 20
             this.hidden = true
@@ -84,31 +79,11 @@ class Fist {
             ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
         }
     }
-    
-    // punch() {
-    // // let counter  = 4
-    // // for (let i = 0;i < counter;i++){
-    // //     this.x += 5 
-    // //     this.x -= 5
-    // //  }
-    // this.hidden = false
-    
-    // if (intervalId % 10 === 0){
-    //     this.punchReturn()
-    //  }
-    // }
-
-//     punchReturn() {
-//         if (this.hidden= false && this.y >= 325 ){
-//             this.velY += gravity
-//             this.y -= this.velY
-//             ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
-//         //this.y = 325
-//     }else{
-//         this.hidden= true
-//     }  
-//   }     
-}//NOOOOOO TOCAAAAAR
+    go() {
+        console.log("d")
+        this.hidden = false
+    }
+}
 
 class Persona {
     constructor (x) {
@@ -124,8 +99,7 @@ class Persona {
     }
     draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
-    }
-    
+    } 
 }
 
 class Hamster {

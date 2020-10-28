@@ -1,7 +1,8 @@
 //DOCUMENT FOR ALL THE MAIN FUNCTIONS
 //globals
 let ratio = 150
-let fistRatio = 20 
+let fistRatio = 20
+let triggered = false
 //game main logic starts
 
 function clearCanvas(){
@@ -49,7 +50,6 @@ let score = 0
 
 function printScore() {
     let color = "yellow"
-
     ctx.fillStyle = color
     ctx.shadowColor = color 
     ctx.shadowOffsetX = 0
@@ -57,7 +57,7 @@ function printScore() {
     ctx.shadowBlur = 10
     ctx.font = `20px "${FONT_NAME}"`
     ctx.textAlign = "center"
-    ctx.fillText(`SCORE: ${score}`, $canvas.width/2, 120)
+    ctx.fillText(`SCORE: ${score}`, 225, 70)
     
     ctx.shadowColor = "transparent"
 }
@@ -66,36 +66,57 @@ WebFont.load({
   active: renderText
 });
 
+//START
+function triggerPunch(){
+    triggered = true
+    printWarning()
+}
 
-function Fistret(){
-    if (frames % ratio === 0 && fist.y > 325){ 
-        fist.velY += gravity 
-        fist.y -= fist.velY
-        ctx.drawImage(fist.img, fistx, fist.y, fist.width, this.height)
+function warning() {
+    let color = "red"
+    ctx.fillStyle = color
+    ctx.shadowColor = color 
+    ctx.shadowOffsetX = 0
+    ctx.shadowOffsetY = 0
+    ctx.shadowBlur = 10
+    ctx.font = `40px "${FONT_NAME}"`
+    ctx.textAlign = "center"
+    ctx.fillText(`INCOMING!`, $canvas.width/2, 150)
+    ctx.shadowColor = "transparent"
+}
+
+let lives = 4
+
+function livesBar() {
+    switch (lives) {
+        case 4:
+            break;
+        case 3: 
+            break;
+        case 2: 
+            break;
+        case 1: 
+            break;
+        case 0:
+            return gameOver()
+        default:
+            break;
     }
 }
 
-//function dodging {
-
-//}
-
-
-function FistDown(){
-if(score % 3 === 0){ 
-
-    fist.punch()
-    // let downRatio = 50
-    // let counter  = 4
-    // if(frames > 200 && frames % downRatio === 0){ 
-    // for (let i = 0;i < counter;i++){
-    //     Fist.x += 5 
-    //     Fist.x -= 5
-    // }
-    //     }else{
-    //       Fist.y = 325
-    //  scorecounter = 0
-    //  }
-  
-  }
+function gameOver(){
+    console.log("game over")
 }
 
+function printWarning() {
+    const randomIncoming = Math.floor(Math.random() * (100 + 300) + 100)
+    if (triggered === true){
+        warning()
+        if (triggered === true && frames % randomIncoming === 0) {
+            console.log(randomIncoming)
+            fist.go()
+            triggered = false
+        } 
+    }   
+}
+//END

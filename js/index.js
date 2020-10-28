@@ -19,6 +19,7 @@ function updateGame() {
     randomBox()
     //Fistret()
     printScore()
+    printWarning()
 }
 
 function startGame() {

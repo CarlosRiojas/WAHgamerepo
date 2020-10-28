@@ -6,17 +6,17 @@ document.onkeydown = e => {
             if (hamsterLeft.y === hamsterUP){
                 score++
                 return hamsterLeft.hit()
-            } else return fist.hidden= false
+            } else return triggerPunch()
         case "ArrowRight":
             if (hamsterRight.y === hamsterUP){
                 score++
                 return hamsterRight.hit()
-            } else return fist.hidden= false
+            } else return triggerPunch()
         case "ArrowUp":
             if (hamsterCenter.y === hamsterUP){
                 score++
                 return hamsterCenter.hit()
-            } else return fist.hidden= false
+            } else return triggerPunch()
         case " ":
             break;
         default:
