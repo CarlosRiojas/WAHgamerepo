@@ -15,7 +15,8 @@ body button {
     font-size: 20px;
     font-family: 'Press Start 2P', cursive;
     color: yellow;
-    background-color: green;
+    text-align: center;
+    background-color: red;
     cursor: pointer;
     border: none;
     padding: 10px;
@@ -26,5 +27,5 @@ h2 {
     color: white;
 }
 footer p {
-    color: green
+    color: yellow
 }
