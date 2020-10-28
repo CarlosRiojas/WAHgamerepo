@@ -13,6 +13,8 @@ function updateGame() {
     fist.draw()
     machineFront.draw()
     teclaLeft.draw()
+    teclaCenter.draw()
+    teclaRight.draw()
     goDown()
     randomBox()
     Fistret()

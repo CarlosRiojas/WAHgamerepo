@@ -147,24 +147,58 @@ class Hamster {
     }
 }
 
+let teclaSquare = 170 //basado en los pngs
+let teclaY = hamsterDOWN-60
+
 class TeclaLeft {
     constructor (x) {
         this.x = x
-        this.y = hamsterDOWN
-        this.width = 75
-        this.height = 50
+        this.y = teclaY
+        this.width = teclaSquare
+        this.height = teclaSquare
+        this.img = new Image()
+        this.img.src = "assets/teclaL.png"
+        this.img.onload = () => {
+            this.draw()
+        }
     }
     draw() {
-        ctx.fillStyle = "black"
-        ctx.fillRect(this.x, this.y, this.width, this.height) 
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height) 
     }
 }
-class TeclaCenter {
 
+class TeclaCenter {
+    constructor (x) {
+        this.x = x
+        this.y = teclaY
+        this.width = teclaSquare
+        this.height = teclaSquare
+        this.img = new Image()
+        this.img.src = "assets/teclaC.png"
+        this.img.onload = () => {
+            this.draw()
+        }
+    }
+    draw() {
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height) 
+    }
 }
 
 class TeclaRight {
-
+    constructor (x) {
+        this.x = x
+        this.y = teclaY
+        this.width = teclaSquare
+        this.height = teclaSquare
+        this.img = new Image()
+        this.img.src = "assets/teclaR.png"
+        this.img.onload = () => {
+            this.draw()
+        }
+    }
+    draw() {
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height) 
+    }
 }
 
 //Instances 
@@ -176,8 +210,8 @@ const fist = new Fist(325) //Max: 500, Min: 325
 const machine = new Machine()
 const persona = new Persona(0)
 const machineFront = new MachineFront()
-const teclaLeft = new TeclaLeft(120)
-// const teclaCenter = new TeclaCenter(312)
-// const teclaRight = new TeclaRight(515)
+const teclaLeft = new TeclaLeft(110)
+const teclaCenter = new TeclaCenter(312)
+const teclaRight = new TeclaRight(515)
 
 
