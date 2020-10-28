@@ -42,6 +42,8 @@ class Fist {
         this.x = ($canvas.width - this.width)/2 //mitad de canvas
         this.y = y //y va a cambiar
         this.img = new Image()
+        this.velY = 0
+        this.hidden = true
         this.img.src = "assets/puño.png"
         this.img.onload = () => {
             this.draw()
@@ -49,24 +51,39 @@ class Fist {
         
     }
     draw() {
+      if (this.hidden === false && this.y < 500 ){ 
+        this.velY += gravity
+        this.y += this.velY
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+       }else{
+           this.hidden = true
+           ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+       }
     }
+    
     punch() {
     // let counter  = 4
     // for (let i = 0;i < counter;i++){
     //     this.x += 5 
     //     this.x -= 5
     //  }
-    this.y = 500
+    this.hidden = false
+    
     if (intervalId % 10 === 0){
         this.punchReturn()
-    }
+     }
     }
 
     punchReturn() {
-        this.y = 325
-    }
-
+        if (this.hidden === false && this.y > 325 ){
+            this.velY += gravity
+            this.y -= this.velY
+            ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+        //this.y = 325
+    }else{
+        this.hidden= true
+    }  
+ }     
 }
 
 class Persona {
