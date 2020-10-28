@@ -15,12 +15,15 @@ function randomBox() {
     switch(RandomMovement){
         case 0:
             hamsterLeft.up()
+            hamsterLeft.wasHit = false
             break;
         case 1:
             hamsterCenter.up()
+            hamsterCenter.wasHit = false
             break;
         case 2:
             hamsterRight.up()
+            hamsterRight.wasHit = false
             break;
         default:
             break;   

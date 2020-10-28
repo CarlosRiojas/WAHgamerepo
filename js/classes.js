@@ -1,5 +1,5 @@
 //GLOBAL
-
+let gravity = 1.5
 
 class Machine {
     constructor() {
@@ -51,13 +51,21 @@ class Fist {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }
     punch() {
-    let counter  = 4
-    for (let i = 0;i < counter;i++){
-        this.x += 5 
-        this.x -= 5
-     }
-     this.y = 500
+    // let counter  = 4
+    // for (let i = 0;i < counter;i++){
+    //     this.x += 5 
+    //     this.x -= 5
+    //  }
+    this.y = 500
+    if (intervalId % 10 === 0){
+        this.punchReturn()
     }
+    }
+
+    punchReturn() {
+        this.y = 325
+    }
+
 }
 
 class Persona {
@@ -81,9 +89,11 @@ class Persona {
 class Hamster {
     constructor (x) {
         this.x = x
-        this.y = 350 //INITIAL
+        this.y = 340 //INITIAL
         this.width = 170 
         this.height = 170
+        this.velY = 0
+        this.wasHit = false
         this.img = new Image()
         this.img.src = "assets/hamster.png"
         this.img.onload = () => {
@@ -91,19 +101,27 @@ class Hamster {
         }
     }
     draw() {
-        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+        if (this.wasHit === true && this.y < 340) {
+            this.velY += gravity
+            this.y += this.velY
+            ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+        } else {
+            this.wasHit = false
+            ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+        }
     }
     up() {
         this.y = 250
+        this.wasHit = false
     }
     down() {
         console.log("down")
-        this.y = 350
+        this.y = 340
+        this.wasHit = false
     }
     hit() {
-        console.log("hit")
-        this.y = 350
-        // return true
+        this.velY = -15 //JUMP
+        this.wasHit = true
     }
     
     
