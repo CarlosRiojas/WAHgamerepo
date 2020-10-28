@@ -33,11 +33,11 @@ function randomBox() {
 
 function goDown() {
     let downRatio = 50
-    if (hamsterLeft.y === 250) {
+    if (hamsterLeft.y === hamsterUP) {
         if(frames > 200 && frames % downRatio === 0) {hamsterLeft.down()}
-    } else if (hamsterCenter.y === 250) {
+    } else if (hamsterCenter.y === hamsterUP) {
         if(frames > 200 && frames % downRatio === 0) {hamsterCenter.down()}
-    } else if (hamsterRight.y === 250) {
+    } else if (hamsterRight.y === hamsterUP) {
         if(frames > 200 && frames % downRatio === 0) {hamsterRight.down()}
     } else return
 }

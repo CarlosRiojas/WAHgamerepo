@@ -1,5 +1,7 @@
 //GLOBAL
 let gravity = 1.5
+let hamsterUP = 240
+let hamsterDOWN= 350 
 
 class Machine {
     constructor() {

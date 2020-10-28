@@ -3,23 +3,20 @@
 document.onkeydown = e => {
     switch (e.key) {
         case "ArrowLeft":
-            if (hamsterLeft.y === 250){
+            if (hamsterLeft.y === hamsterUP){
                 score++
-                return hamsterLeft.hit()//console.log("L")
+                return hamsterLeft.hit()
             } else return fist.punch()
-            // return hit("LEFT")
         case "ArrowRight":
-            if (hamsterRight.y === 250){
+            if (hamsterRight.y === hamsterUP){
                 score++
-                return hamsterRight.hit()//console.log("R")
+                return hamsterRight.hit()
             } else return fist.punch()
-            // return hit("RIGHT") 
         case "ArrowUp":
-            if (hamsterCenter.y === 250){
+            if (hamsterCenter.y === hamsterUP){
                 score++
-                return hamsterCenter.hit()//console.log("C")
+                return hamsterCenter.hit()
             } else return fist.punch()
-            // return hit("UP"); 
         case " ":
             break;
         default:
