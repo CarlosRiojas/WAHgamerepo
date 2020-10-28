@@ -5,21 +5,18 @@ document.onkeydown = e => {
         case "ArrowLeft":
             if (hamsterLeft.y === 250){
                 score++
-                return hamsterLeft.hit()//console.log("L")
+                return hamsterLeft.hit()
             } else return fist.punch()
-            // return hit("LEFT")
         case "ArrowRight":
             if (hamsterRight.y === 250){
                 score++
-                return hamsterRight.hit()//console.log("R")
+                return hamsterRight.hit()
             } else return fist.punch()
-            // return hit("RIGHT") 
         case "ArrowUp":
             if (hamsterCenter.y === 250){
                 score++
-                return hamsterCenter.hit()//console.log("C")
+                return hamsterCenter.hit()/
             } else return fist.punch()
-            // return hit("UP"); 
         case " ":
 
             return 
