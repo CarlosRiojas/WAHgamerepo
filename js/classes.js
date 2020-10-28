@@ -1,7 +1,7 @@
 //GLOBAL
 let gravity = 1.5
 let hamsterUP= 240
-let hamsterDOWN = 315
+let hamsterDOWN = 350 //315
 
 
 class Machine {
@@ -116,6 +116,8 @@ class Hamster {
         this.wasHit = false
         this.img = new Image()
         this.img.src = "assets/hamster.png"
+        this.imgHit = new Image()
+        this.imgHit.src = "assets/hamsterSurprised.png"
         this.img.onload = () => {
              this.draw()
         }
@@ -124,7 +126,7 @@ class Hamster {
         if (this.wasHit === true && this.y < hamsterDOWN-8) {
             this.velY += gravity
             this.y += this.velY
-            ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+            ctx.drawImage(this.imgHit, this.x, this.y, this.width, this.height)
         } else {
             this.wasHit = false
             ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
@@ -143,8 +145,26 @@ class Hamster {
         this.velY = -15 //JUMP
         this.wasHit = true
     }
-    
-    
+}
+
+class TeclaLeft {
+    constructor (x) {
+        this.x = x
+        this.y = hamsterDOWN
+        this.width = 75
+        this.height = 50
+    }
+    draw() {
+        ctx.fillStyle = "black"
+        ctx.fillRect(this.x, this.y, this.width, this.height) 
+    }
+}
+class TeclaCenter {
+
+}
+
+class TeclaRight {
+
 }
 
 //Instances 
@@ -156,5 +176,8 @@ const fist = new Fist(325) //Max: 500, Min: 325
 const machine = new Machine()
 const persona = new Persona(0)
 const machineFront = new MachineFront()
+const teclaLeft = new TeclaLeft(120)
+// const teclaCenter = new TeclaCenter(312)
+// const teclaRight = new TeclaRight(515)
 
 

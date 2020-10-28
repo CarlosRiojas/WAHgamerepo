@@ -7,16 +7,16 @@ function updateGame() {
     clearCanvas()
     persona.draw()
     machine.draw()
-    fist.draw()
     hamsterLeft.draw()
     hamsterCenter.draw()
     hamsterRight.draw()
+    fist.draw()
     machineFront.draw()
+    teclaLeft.draw()
     goDown()
     randomBox()
     Fistret()
     printScore()
-    
 }
 
 function startGame() {

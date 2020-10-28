@@ -48,9 +48,8 @@ const FONT_NAME = 'Press Start 2P'
 let score = 0
 
 function printScore() {
-    // ctx.save();
-    // ctx.translate(X,Y);
     let color = "yellow"
+
     ctx.fillStyle = color
     ctx.shadowColor = color 
     ctx.shadowOffsetX = 0
@@ -59,8 +58,8 @@ function printScore() {
     ctx.font = `20px "${FONT_NAME}"`
     ctx.textAlign = "center"
     ctx.fillText(`SCORE: ${score}`, $canvas.width/2, 120)
+    
     ctx.shadowColor = "transparent"
-    // ctx.restore();
 }
 WebFont.load({
     google: {families: [FONT_NAME]},
