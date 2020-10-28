@@ -17,7 +17,7 @@ function updateGame() {
     teclaRight.draw()
     goDown()
     randomBox()
-    Fistret()
+    //Fistret()
     printScore()
 }
 

@@ -1,7 +1,7 @@
 //DOCUMENT FOR ALL THE MAIN FUNCTIONS
 //globals
 let ratio = 150
-
+let fistRatio = 20 
 //game main logic starts
 
 function clearCanvas(){
@@ -68,8 +68,10 @@ WebFont.load({
 
 
 function Fistret(){
-    if (frames % ratio === 0){ 
-         fist.y=325
+    if (frames % ratio === 0 && fist.y > 325){ 
+        fist.velY += gravity 
+        fist.y -= fist.velY
+        ctx.drawImage(fist.img, fistx, fist.y, fist.width, this.height)
     }
 }
 
