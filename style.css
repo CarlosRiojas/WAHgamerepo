@@ -6,6 +6,13 @@ html {
     text-align: center;
 }
 
+/* body {
+    background-image: url(https://i.pinimg.com/originals/9b/f6/5c/9bf65cadfdf7e3d783a810aa8854f6e9.jpg);
+    background-size: 800px 800px; 
+    background-repeat: no-repeat;
+    background-position: top center;
+} */
+
 body #canvas {
     float: center;
     border-bottom: 1px solid rgb(32, 32, 32);

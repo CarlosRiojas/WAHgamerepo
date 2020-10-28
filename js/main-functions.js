@@ -1,7 +1,7 @@
 //DOCUMENT FOR ALL THE MAIN FUNCTIONS
 //globals
 let ratio = 150
-
+let fistRatio = 20 
 //game main logic starts
 
 function clearCanvas(){
@@ -48,10 +48,18 @@ const FONT_NAME = 'Press Start 2P'
 let score = 0
 
 function printScore() {
-    ctx.fillStyle = "yellow"
+    let color = "yellow"
+
+    ctx.fillStyle = color
+    ctx.shadowColor = color 
+    ctx.shadowOffsetX = 0
+    ctx.shadowOffsetY = 0
+    ctx.shadowBlur = 10
     ctx.font = `20px "${FONT_NAME}"`
     ctx.textAlign = "center"
     ctx.fillText(`SCORE: ${score}`, $canvas.width/2, 120)
+    
+    ctx.shadowColor = "transparent"
 }
 WebFont.load({
     google: {families: [FONT_NAME]},
@@ -60,8 +68,10 @@ WebFont.load({
 
 
 function Fistret(){
-    if (frames % ratio === 0){ 
-         fist.y=325
+    if (frames % ratio === 0 && fist.y > 325){ 
+        fist.velY += gravity 
+        fist.y -= fist.velY
+        ctx.drawImage(fist.img, fistx, fist.y, fist.width, this.height)
     }
 }
 
