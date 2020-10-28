@@ -14,6 +14,7 @@ function updateGame() {
     machineFront.draw()
     goDown()
     randomBox()
+    Fistret()
     printScore()
     
 }

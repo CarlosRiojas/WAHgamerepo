@@ -56,6 +56,17 @@ WebFont.load({
 });
 
 
+function Fistret(){
+    if (frames % ratio === 0){ 
+         fist.y=325
+    }
+}
+
+//function dodging {
+
+//}
+
+
 function FistDown(){
 if(score % 3 === 0){ 
 

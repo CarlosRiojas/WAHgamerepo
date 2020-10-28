@@ -21,8 +21,7 @@ document.onkeydown = e => {
             } else return fist.punch()
             // return hit("UP"); 
         case " ":
-
-            return 
+            break;
         default:
             break;
     }

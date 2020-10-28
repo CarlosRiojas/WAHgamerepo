@@ -51,13 +51,15 @@ class Fist {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }
     punch() {
-    let counter  = 4
+    let counter  = 50
     for (let i = 0;i < counter;i++){
-        this.x += 5 
-        this.x -= 5
+        this.y= 320
+        for (let i = 0;i < counter;i++){
+        this.y= 325
      }
      this.y = 500
     }
+   }
 }
 
 class Persona {
