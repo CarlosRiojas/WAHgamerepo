@@ -2,6 +2,7 @@
 //globals
 let ratio = 150
 let fistRatio = 20 
+let feetRatio = 20
 //game main logic starts
 
 function clearCanvas(){
@@ -98,4 +99,6 @@ if(score % 3 === 0){
   
   }
 }
+
+
 

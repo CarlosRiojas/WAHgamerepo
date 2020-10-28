@@ -85,29 +85,7 @@ class Fist {
         }
     }
     
-    // punch() {
-    // // let counter  = 4
-    // // for (let i = 0;i < counter;i++){
-    // //     this.x += 5 
-    // //     this.x -= 5
-    // //  }
-    // this.hidden = false
-    
-    // if (intervalId % 10 === 0){
-    //     this.punchReturn()
-    //  }
-    // }
-
-//     punchReturn() {
-//         if (this.hidden= false && this.y >= 325 ){
-//             this.velY += gravity
-//             this.y -= this.velY
-//             ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
-//         //this.y = 325
-//     }else{
-//         this.hidden= true
-//     }  
-//   }     
+   
 }//NOOOOOO TOCAAAAAR
 
 class Persona {
@@ -116,17 +94,52 @@ class Persona {
         this.width = 800 //CAMBIAR
         this.x = 0
         this.y = ($canvas.height - this.height) + 15
+        this.velX =0
         this.img = new Image()
         this.img.src = "assets/persona.png"
         this.img.onload = () => {
             this.draw()
         }
+        this.away = false
     }
     draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }
-    
-}
+    moveAway(){
+        if(this.away === false && this.x <= 120){ 
+        this.away = false
+        this.velX += gravity
+        this.x += this.velX 
+        if(this.x = 120){
+            console.log("feet return")
+            this.velX = 0
+            if(frames % feetRatio === 0){
+                this.away = false
+                ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+            }
+        }
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+    //         if(this.away = true && this.x !== 0){ 
+    //              console.log("come back")
+    //              this.velY -= gravity 
+    //              this.x -= this.velX
+    //             ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+    //   }
+    }else if(this.away === true && this.x > 0){  
+        this.velX = 20
+        this.away = true
+        console.log("GET AWAY")
+        this.velX += gravity
+        this.x += this.velX 
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+    }else{
+        this.away= true
+        this.velX= 0
+        this.y = 325
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+    }
+  } 
+}//no tocar
 
 class Hamster {
     constructor (x) {

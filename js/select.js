@@ -18,6 +18,7 @@ document.onkeydown = e => {
                 return hamsterCenter.hit()
             } else return fist.hidden= false
         case " ":
+               persona.moveAway()
             break;
         default:
             break;
