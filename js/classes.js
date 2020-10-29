@@ -99,7 +99,6 @@ class Fist {
         this.img.onload = () => {
             this.draw()
         }
-        
     }
     draw() {
         if (this.hidden === false && this.y <= 500){ //sale puño
@@ -129,6 +128,17 @@ class Fist {
     }
     go() {
         this.hidden = false
+    }
+
+    isTouching(persona) {
+        let fistLiveX = this.x+(this.width/3)
+        let fistLiveWidth = (this.width/3)*2
+        return (
+            (fistLiveX < (persona.x + persona.width)) &&
+            ((fistLiveX + fistLiveWidth) > persona.x) &&
+            (this.y < (persona.y + persona.height)) &&
+            ((this.y + fistLiveWidth) > persona.y)
+        )
     }
 }
 
@@ -165,29 +175,7 @@ class Persona {
         }
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     } 
-
-
-
-
-    // moveAway(){
-    //     for(let i = 0;i <= 200; i++){
-    //         this.velX += gravity
-    //         this.x += velX 
-    //         console.log("check")
-    //     }
-      
-    //    if(this.x === 200) { 
-    //     console.log("second condition")
-    //     this.away = false
-    //     this.velX = 20
-    //     this.velX += gravity 
-    //     this.x -= this.velX
-    //     }else {
-    //     console.log("third condition")
-    //     this.x = 0
-    //     }
-    //  }
-   } // DO NOT TOUCH
+}
    
 class Hamster {
     constructor (x) {

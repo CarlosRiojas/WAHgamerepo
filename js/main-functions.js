@@ -77,6 +77,11 @@ function punch() {
     }   
 }
 
+function checkCollision() {
+    if (fist.isTouching(persona)) {
+        console.log("touch")
+    }
+}
 
 //CUSTOM GOOGLE FONTS DOCUMENTATION:
 //https://hacks.mozilla.org/2016/06/webfont-preloading-for-html5-games/
