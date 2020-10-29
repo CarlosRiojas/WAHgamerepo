@@ -2,6 +2,7 @@
 //globals
 let ratio = 150
 let fistRatio = 20
+let feetRatio = 20
 let triggered = false
 let lives = 3
 //game main logic starts

@@ -106,19 +106,37 @@ class Persona {
     constructor (x) {
         this.height = 150 //CAMBIAR
         this.width = 800 //CAMBIAR
-        this.x = 0
+        this.x = x
         this.y = ($canvas.height - this.height) + 15
+        this.velX = 6
         this.img = new Image()
         this.img.src = "assets/persona.png"
         this.img.onload = () => {
             this.draw()
         }
+        this.away = false
     }
     draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     } 
-}
-
+    moveAway(){
+        for(let i = 0;i < 200; i++){
+            this.x++
+            console.log("check")
+        }
+      
+       if(this.x === 200) { 
+        console.log("second condition")
+        this.velX = 20
+        this.velX += gravity 
+        this.x -= this.velX
+        }else {
+        console.log("third condition")
+        this.x = 0
+        }
+     }
+   } 
+   
 class Hamster {
     constructor (x) {
         this.x = x
