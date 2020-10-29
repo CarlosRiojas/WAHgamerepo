@@ -55,6 +55,36 @@ class MachineFront {
 //     }
 // }
 
+class Hammer {
+    constructor(){
+        this.x = 0
+        this.y = 40
+        this.width = 300
+        this.height = 300
+        this.img = new Image()
+        this.img.src = "assets/hammer.png"
+        this.img.onload = () => {
+            this.draw()
+        }
+    }
+    draw(){
+        if (hamsterLeft.wasHit === true) {
+            this.x = 120
+            ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+            this.x = 0
+        } else if (hamsterCenter.wasHit === true){
+            this.x = 320
+            ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+            this.x = 0
+        } else if (hamsterRight.wasHit === true){
+            this.x = 530
+            ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+            this.x = 0
+        } else {
+        }
+
+    }
+}
 
 class Fist {
     constructor (y) {
@@ -244,4 +274,4 @@ const machineFront = new MachineFront()
 const teclaLeft = new TeclaLeft(110)
 const teclaCenter = new TeclaCenter(312)
 const teclaRight = new TeclaRight(517)
-const coverFist = new CoverFist ()
+const hammer = new Hammer ()

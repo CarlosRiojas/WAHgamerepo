@@ -21,6 +21,7 @@ function updateGame() {
     //Fistret()
     printScore()
     printLife()
+    hammer.draw()
     punch()
 }
 
