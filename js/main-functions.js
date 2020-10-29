@@ -3,7 +3,7 @@
 let ratio = 150
 let fistRatio = 20
 let triggered = false
-let lives = 1
+let lives = 3
 //game main logic starts
 
 function clearCanvas(){

@@ -11,7 +11,7 @@ class Machine {
         this.width = $canvas.width
         this.height = $canvas.height
         this.img = new Image()
-        this.img.src = "assets/machineNOpixel.png"
+        this.img.src = "assets/machineNOborder.png"
         this.img.onload = () => {
             this.draw()
         }
@@ -28,7 +28,7 @@ class MachineFront {
         this.width = $canvas.width
         this.height = $canvas.height
         this.img = new Image()
-        this.img.src = "assets/machineFrontNopixel.png"
+        this.img.src = "assets/machineFrontNoborder.png"
         this.img.onload = () => {
             this.draw()
         }
@@ -37,6 +37,24 @@ class MachineFront {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }
 }
+
+// class CoverFist {
+//     constructor(){
+//         this.x = 0
+//         this.y = 0
+//         this.width = $canvas.width
+//         this.height = $canvas.height+250
+//         this.img = new Image()
+//         this.img.src = "assets/coverSquare.png"
+//         this.img.onload = () => {
+//             this.draw()
+//         }
+//     }
+//     draw(){
+//         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+//     }
+// }
+
 
 class Fist {
     constructor (y) {
@@ -143,7 +161,7 @@ class Hamster {
 }
 
 let teclaSquare = 170 //basado en los pngs
-let teclaY = hamsterDOWN-60
+let teclaY = hamsterDOWN-65
 
 class TeclaLeft {
     constructor (x) {
@@ -207,6 +225,5 @@ const persona = new Persona(0)
 const machineFront = new MachineFront()
 const teclaLeft = new TeclaLeft(110)
 const teclaCenter = new TeclaCenter(312)
-const teclaRight = new TeclaRight(515)
-
-
+const teclaRight = new TeclaRight(517)
+const coverFist = new CoverFist ()
