@@ -19,7 +19,8 @@ function updateGame() {
     randomBox()
     //Fistret()
     printScore()
-    printWarning()
+    printLife()
+    punch()
 }
 
 function startGame() {

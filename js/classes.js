@@ -80,7 +80,6 @@ class Fist {
         }
     }
     go() {
-        console.log("d")
         this.hidden = false
     }
 }
