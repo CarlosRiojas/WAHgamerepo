@@ -199,8 +199,9 @@ function gameOver() {
     ctx.textAlign = "center"
     ctx.fillText("GAME OVER", $canvas.width/2, $canvas.height/2)
     ctx.font = `30px "${FONT_NAME}"`
-    ctx.fillText("Refresh to try again", $canvas.width/2, $canvas.height/2+50)
-}
+    ctx.fillText("Refresh to try again", $canvas.width/2, $canvas.height/2+100)
+  } 
+
 WebFont.load({
     google: {families: [FONT_NAME]},
     active: renderText

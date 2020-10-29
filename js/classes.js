@@ -38,22 +38,22 @@ class MachineFront {
     }
 }
 
-// class CoverFist {
-//     constructor(){
-//         this.x = 0
-//         this.y = 0
-//         this.width = $canvas.width
-//         this.height = $canvas.height+250
-//         this.img = new Image()
-//         this.img.src = "assets/coverSquare.png"
-//         this.img.onload = () => {
-//             this.draw()
-//         }
-//     }
-//     draw(){
-//         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
-//     }
-// }
+class CoverFist {
+    constructor(){
+        this.x = 0
+        this.y = 50
+        this.width = $canvas.width
+        this.height = $canvas.height+250
+        this.img = new Image()
+        this.img.src = "assets/coverSquare.png"
+        this.img.onload = () => {
+            this.draw()
+        }
+    }
+    draw(){
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+    }
+}
 
 class Hammer {
     constructor(){
@@ -151,7 +151,7 @@ class Persona {
         this.height = 150 //CAMBIAR
         this.width = 800 //CAMBIAR
         this.x = x
-        this.y = ($canvas.height - this.height) + 15
+        this.y = $canvas.height - this.height
         this.velX = 6
         this.img = new Image()
         this.img.src = "assets/persona.png"
@@ -176,6 +176,19 @@ class Persona {
         }
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     } 
+}
+
+class LoadScreen {
+    constructor(){
+        this.img = new Image()
+        this.img.src = "assets/startScreen.png"
+        this.img.onload = () => {
+            this.draw()
+        }
+    }
+    draw(){
+        ctx.drawImage(this.img, 0, 0, $canvas.width, $canvas.height)
+    }
 }
    
 class Hamster {
@@ -274,6 +287,7 @@ class TeclaRight {
 
 //Instances 
 
+const loadScreen = new LoadScreen()
 const hamsterLeft = new Hamster(110) 
 const hamsterCenter = new Hamster(312)
 const hamsterRight = new Hamster(515)
@@ -285,3 +299,5 @@ const teclaLeft = new TeclaLeft(110)
 const teclaCenter = new TeclaCenter(312)
 const teclaRight = new TeclaRight(517)
 const hammer = new Hammer ()
+const coverFist = new CoverFist()
+

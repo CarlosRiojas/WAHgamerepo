@@ -2,7 +2,7 @@
 
 html {
     font-family: 'Press Start 2P', cursive;
-    background-color: #0A0A0A;
+    background-color: #0A0E16;
     text-align: center;
 }
 
@@ -21,9 +21,9 @@ body #canvas {
 body button {
     font-size: 20px;
     font-family: 'Press Start 2P', cursive;
-    color: yellow;
+    color: white;
     text-align: center;
-    background-color: red;
+    background-color: blue;
     cursor: pointer;
     border: none;
     padding: 10px;
@@ -33,6 +33,11 @@ body button {
 h2 {
     color: white;
 }
-footer p {
-    color: yellow
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: cyan;
 }
