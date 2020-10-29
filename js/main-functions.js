@@ -4,7 +4,10 @@ let ratio = 150
 let fistRatio = 20
 let feetRatio = 20
 let triggered = false
-let lives = 3
+let triggerCounter = 0
+let lives = 4
+let hit = false
+let score = 0
 //game main logic starts
 
 function clearCanvas(){
@@ -12,9 +15,9 @@ function clearCanvas(){
 }
 
 function randomBox() {
+    let upRatio = 150+(score/10)
     if (frames % ratio === 0){ 
     const RandomMovement= Math.floor(Math.random() * 3)
-    console.log(RandomMovement)
     switch(RandomMovement){
         case 0:
             hamsterLeft.up()
@@ -35,7 +38,7 @@ function randomBox() {
 }
 
 function goDown() {
-    let downRatio = 50
+    let downRatio = 50+(score/10)
     if (hamsterLeft.y === hamsterUP) {
         if(frames > 200 && frames % downRatio === 0) {hamsterLeft.down()}
     } else if (hamsterCenter.y === hamsterUP) {
@@ -45,48 +48,42 @@ function goDown() {
     } else return
 }
 
-let triggerCounter = 0
 
 //START
 function triggerPunch(){
-    triggerCounter++
+    // triggerCounter++
     triggered = true
-    console.log(`Trigger counter in preliminary function ${triggerCounter}`)
     // while (triggerCounter>0){
         punch()
     // }
 }
 
-//TODO: FIX THE GLITCHY PUNCH AND REMOVE ACCUMULATING PUNCH
-
-
-
-function gameOver(){
-    console.log("game over")
-}
-
 function punch() {
-    if (triggered === true){
-        const randomIncoming = Math.floor(Math.random() * (50 + 200) + 100)
+    const randomIncoming = Math.floor(Math.random() * (200 + 300) + 200)
+    if (triggered === true && frames > 200){
         printWarning()
         if (triggered === true && frames % randomIncoming === 0) {
             fist.go()
             triggered = false
-            triggerCounter--
+            // triggerCounter--
         } 
     }   
 }
 
 function checkCollision() {
-    if (fist.isTouching(persona)) {
-        console.log("touch")
-    }
+    if (fist.isTouching(persona) && hit=== false) {
+        hit = true
+        console.log(hit)
+        lives--
+    } else if (!fist.isTouching(persona) && hit===true){
+        hit=false
+    }  
 }
 
 //CUSTOM GOOGLE FONTS DOCUMENTATION:
 //https://hacks.mozilla.org/2016/06/webfont-preloading-for-html5-games/
 const FONT_NAME = 'Press Start 2P'
-let score = 0
+
 
 function yellowBar(percent) {
     let totalLength = 380
@@ -193,7 +190,19 @@ function hitMessage() {
     ctx.shadowColor = "transparent"
 }
 
+function gameOver() {
+    clearInterval(intervalId)
+    intervalId = null
+    ctx.fillStyle = "black"
+    ctx.fillRect(0,0,$canvas.width,$canvas.height)
+    ctx.fillStyle = "white"
+    ctx.font = `60px "${FONT_NAME}"`
+    ctx.textAlign = "center"
+    ctx.fillText("GAME OVER", $canvas.width/2, $canvas.height/2)
+    ctx.fillText("Refresh to try again", $canvas.width/2, $canvas.height/2+50)
+  } 
+
 WebFont.load({
     google: {families: [FONT_NAME]},
-  active: renderText
+    active: renderText
 });

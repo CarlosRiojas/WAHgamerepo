@@ -10,6 +10,7 @@ function updateGame() {
     hamsterLeft.draw()
     hamsterCenter.draw()
     hamsterRight.draw()
+    checkCollision()
     fist.draw()
     // coverFist.draw()
     machineFront.draw()
@@ -29,4 +30,4 @@ function startGame() {
     if (intervalId) return
     intervalId = setInterval (updateGame, 1000/60)
 }
-
+  
