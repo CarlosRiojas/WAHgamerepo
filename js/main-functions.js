@@ -58,7 +58,7 @@ function triggerPunch(){
 }
 
 function punch() {
-    const randomIncoming = Math.floor(Math.random() * (200 + 300) + 200)
+    const randomIncoming = Math.floor(Math.random() * (70 + 200) +70)
     if (triggered === true && frames > 200){
         printWarning()
         if (triggered === true && frames % randomIncoming === 0) {
