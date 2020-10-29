@@ -55,6 +55,36 @@ class MachineFront {
 //     }
 // }
 
+class Hammer {
+    constructor(){
+        this.x = 0
+        this.y = 40
+        this.width = 300
+        this.height = 300
+        this.img = new Image()
+        this.img.src = "assets/hammer.png"
+        this.img.onload = () => {
+            this.draw()
+        }
+    }
+    draw(){
+        if (hamsterLeft.wasHit === true) {
+            this.x = 120
+            ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+            this.x = 0
+        } else if (hamsterCenter.wasHit === true){
+            this.x = 320
+            ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+            this.x = 0
+        } else if (hamsterRight.wasHit === true){
+            this.x = 530
+            ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+            this.x = 0
+        } else {
+        }
+
+    }
+}
 
 class Fist {
     constructor (y) {
@@ -117,25 +147,47 @@ class Persona {
         this.away = false
     }
     draw() {
+      if(this.away === true && this.x <= 200){
+            this.velX += gravity
+            this.x += this.velX 
+            console.log("check")
+            if(this.x = 200) { 
+                console.log("second condition")
+                this.away = false
+            } 
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+        }else if(this.away === false && this.x >= 0){
+            console.log("thirdcondition")
+            this.velX = -5
+            this.velX -= gravity 
+            this.x += this.velX
+            ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+        }
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     } 
-    moveAway(){
-        for(let i = 0;i < 200; i++){
-            this.x++
-            console.log("check")
-        }
+
+
+
+
+    // moveAway(){
+    //     for(let i = 0;i <= 200; i++){
+    //         this.velX += gravity
+    //         this.x += velX 
+    //         console.log("check")
+    //     }
       
-       if(this.x === 200) { 
-        console.log("second condition")
-        this.velX = 20
-        this.velX += gravity 
-        this.x -= this.velX
-        }else {
-        console.log("third condition")
-        this.x = 0
-        }
-     }
-   } 
+    //    if(this.x === 200) { 
+    //     console.log("second condition")
+    //     this.away = false
+    //     this.velX = 20
+    //     this.velX += gravity 
+    //     this.x -= this.velX
+    //     }else {
+    //     console.log("third condition")
+    //     this.x = 0
+    //     }
+    //  }
+   } // DO NOT TOUCH
    
 class Hamster {
     constructor (x) {
@@ -244,4 +296,4 @@ const machineFront = new MachineFront()
 const teclaLeft = new TeclaLeft(110)
 const teclaCenter = new TeclaCenter(312)
 const teclaRight = new TeclaRight(517)
-const coverFist = new CoverFist ()
+const hammer = new Hammer ()

@@ -18,7 +18,7 @@ document.onkeydown = e => {
                 return hamsterCenter.hit()
             } else return triggerPunch()
         case " ":
-              return persona.moveAway()
+              return persona.away = true
         default:
             break;
     }
