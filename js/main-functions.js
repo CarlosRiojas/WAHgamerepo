@@ -15,7 +15,6 @@ function clearCanvas(){
 }
 
 function randomBox() {
-    let upRatio = 150+(score/10)
     if (frames % ratio === 0){ 
     const RandomMovement= Math.floor(Math.random() * 3)
     switch(RandomMovement){
@@ -38,7 +37,7 @@ function randomBox() {
 }
 
 function goDown() {
-    let downRatio = 50+(score/10)
+    let downRatio = 50
     if (hamsterLeft.y === hamsterUP) {
         if(frames > 200 && frames % downRatio === 0) {hamsterLeft.down()}
     } else if (hamsterCenter.y === hamsterUP) {
@@ -199,9 +198,9 @@ function gameOver() {
     ctx.font = `60px "${FONT_NAME}"`
     ctx.textAlign = "center"
     ctx.fillText("GAME OVER", $canvas.width/2, $canvas.height/2)
+    ctx.font = `30px "${FONT_NAME}"`
     ctx.fillText("Refresh to try again", $canvas.width/2, $canvas.height/2+50)
-  } 
-
+}
 WebFont.load({
     google: {families: [FONT_NAME]},
     active: renderText
