@@ -11,7 +11,7 @@ class Machine {
         this.width = $canvas.width
         this.height = $canvas.height
         this.img = new Image()
-        this.img.src = "assets/machineNOpixel.png"
+        this.img.src = "assets/machine"
         this.img.onload = () => {
             this.draw()
         }
