@@ -1,5 +1,5 @@
 //GLOBAL
-let gravity = 1.5
+let gravity = 1
 let hamsterUP= 240
 let hamsterDOWN = 350 //315
 
@@ -95,18 +95,16 @@ class Fist {
         this.img = new Image()
         this.velY = 0
         this.hidden = true
-        this.img.src = "assets/puñoShort-01.png"
+        this.img.src = "assets/puñoShort-02.png"
         this.img.onload = () => {
             this.draw()
         }
-        
     }
     draw() {
         if (this.hidden === false && this.y <= 500){ //sale puño
             this.velY += gravity
             this.y += this.velY 
             if(this.y = 500){
-                console.log("fist return")
                 this.velY = 0
                 if(frames % fistRatio === 0){ 
                     this.hidden = true
@@ -130,6 +128,22 @@ class Fist {
     go() {
         this.hidden = false
     }
+    isTouching(persona) {
+        let fistLiveX = this.x+(this.width/3)
+        let fistLiveWidth = (this.width/3)*2
+        let fistLiveY = this.y+((this.height/3)*2)
+        let personaLiveX = persona.x + 375
+        let personaLiveWidth = 50
+        let personaLiveY = persona.y + 75
+        let personaLiveHeight = 75
+        
+        return (
+            (fistLiveX < (personaLiveX + personaLiveWidth)) &&
+            ((fistLiveX + fistLiveWidth) > personaLiveX) &&
+            (fistLiveY < (personaLiveY + personaLiveHeight)) &&
+            ((fistLiveY + fistLiveWidth) > personaLiveY)
+        )
+    }
 }
 
 class Persona {
@@ -147,17 +161,14 @@ class Persona {
         this.away = false
     }
     draw() {
-      if(this.away === true && this.x <= 200){
+      if(this.away === true && this.x <= 300){
             this.velX += gravity
             this.x += this.velX 
-            console.log("check")
-            if(this.x = 200) { 
-                console.log("second condition")
+            if(this.x = 300) { 
                 this.away = false
             } 
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
         }else if(this.away === false && this.x >= 0){
-            console.log("thirdcondition")
             this.velX = -5
             this.velX -= gravity 
             this.x += this.velX
@@ -165,35 +176,13 @@ class Persona {
         }
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     } 
-
-
-
-
-    // moveAway(){
-    //     for(let i = 0;i <= 200; i++){
-    //         this.velX += gravity
-    //         this.x += velX 
-    //         console.log("check")
-    //     }
-      
-    //    if(this.x === 200) { 
-    //     console.log("second condition")
-    //     this.away = false
-    //     this.velX = 20
-    //     this.velX += gravity 
-    //     this.x -= this.velX
-    //     }else {
-    //     console.log("third condition")
-    //     this.x = 0
-    //     }
-    //  }
-   } // DO NOT TOUCH
+}
    
 class Hamster {
     constructor (x) {
         this.x = x
         this.y = hamsterDOWN //INITIAL
-        this.width = 170 
+        this.width = 170
         this.height = 170
         this.velY = 0
         this.wasHit = false
@@ -220,7 +209,6 @@ class Hamster {
         this.wasHit = false
     }
     down() {
-        console.log("down")
         this.y = hamsterDOWN
         this.wasHit = false
     }

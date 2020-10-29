@@ -10,6 +10,7 @@ function updateGame() {
     hamsterLeft.draw()
     hamsterCenter.draw()
     hamsterRight.draw()
+    checkCollision()
     fist.draw()
     // coverFist.draw()
     machineFront.draw()
@@ -29,12 +30,4 @@ function startGame() {
     if (intervalId) return
     intervalId = setInterval (updateGame, 1000/60)
 }
-
-
-function gameOver() {
-  clearInterval(intervalId)
-  intervalId = null
-  ctx.fillStyle = "white"
-  ctx.font = "40px Arial"
-  ctx.fillText("Game Over", 140, $canvas.height / 2)
-}   
+  
