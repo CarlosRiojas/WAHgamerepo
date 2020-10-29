@@ -95,7 +95,7 @@ class Fist {
         this.img = new Image()
         this.velY = 0
         this.hidden = true
-        this.img.src = "assets/puño.png"
+        this.img.src = "assets/puñoShort-01.png"
         this.img.onload = () => {
             this.draw()
         }
