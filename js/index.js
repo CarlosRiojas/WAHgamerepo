@@ -11,6 +11,7 @@ function updateGame() {
     hamsterCenter.draw()
     hamsterRight.draw()
     fist.draw()
+    // coverFist.draw()
     machineFront.draw()
     teclaLeft.draw()
     teclaCenter.draw()
@@ -19,7 +20,8 @@ function updateGame() {
     randomBox()
     //Fistret()
     printScore()
-    printWarning()
+    printLife()
+    punch()
 }
 
 function startGame() {
