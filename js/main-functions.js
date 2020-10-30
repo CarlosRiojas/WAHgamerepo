@@ -61,7 +61,7 @@ function punch() {
     const randomIncoming = Math.floor(Math.random() * (70 + 200) +70)
     if (triggered === true && frames > 200){
         printWarning()
-        if (triggered === true && frames % randomIncoming === 0) {
+        if (triggered === true && frames % 50 === 0) {
             fist.go()
             triggered = false
             // triggerCounter--
@@ -72,7 +72,6 @@ function punch() {
 function checkCollision() {
     if (fist.isTouching(persona) && hit=== false) {
         hit = true
-        console.log(hit)
         lives--
     } else if (!fist.isTouching(persona) && hit===true){
         hit=false
@@ -192,7 +191,7 @@ function hitMessage() {
 function gameOver() {
     clearInterval(intervalId)
     intervalId = null
-    ctx.fillStyle = "black"
+    ctx.fillStyle = "#0A0E16"
     ctx.fillRect(0,0,$canvas.width,$canvas.height)
     ctx.fillStyle = "white"
     ctx.font = `60px "${FONT_NAME}"`

@@ -23,6 +23,7 @@ function updateGame() {
     printScore()
     printLife()
     hammer.draw()
+    personaHit.draw()
     punch()
 }
 

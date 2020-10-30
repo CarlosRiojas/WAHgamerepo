@@ -91,7 +91,7 @@ class Fist {
         this.width = 250
         this.height = 250
         this.x = ($canvas.width - this.width)/2 //mitad de canvas
-        this.y = y //y va a cambiar
+        this.y = 325 //y va a cambiar
         this.img = new Image()
         this.velY = 0
         this.hidden = true
@@ -122,7 +122,7 @@ class Fist {
             this.hidden = true
             this.velY = 0
             this.y = 325
-            ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+            // ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
         }
     }
     go() {
@@ -285,13 +285,34 @@ class TeclaRight {
     }
 }
 
+class PersonaHit {
+    constructor(){
+        this.width = 300
+        this.height = 150
+        this.x = ($canvas.width-this.width)/2
+        this.y = $canvas.height - this.height
+        this.img = new Image()
+        this.img.src = "assets/personaHit.png"
+        this.img.onload = () => {
+            this.draw()
+        }
+    }
+    draw() {
+        if (hit === true) {
+            // ctx.fillStyle = "white"
+            // ctx.fillRect(0,0,$canvas.width,$canvas.height)
+            ctx.drawImage(this.img, this.x, this.y, this.width, this.height) 
+        }
+    }
+}
+
 //Instances 
 
 const loadScreen = new LoadScreen()
 const hamsterLeft = new Hamster(110) 
 const hamsterCenter = new Hamster(312)
 const hamsterRight = new Hamster(515)
-const fist = new Fist(325) //Max: 500, Min: 325
+const fist = new Fist() //Max: 500, Min: 325
 const machine = new Machine()
 const persona = new Persona(0)
 const machineFront = new MachineFront()
@@ -300,4 +321,5 @@ const teclaCenter = new TeclaCenter(312)
 const teclaRight = new TeclaRight(517)
 const hammer = new Hammer ()
 const coverFist = new CoverFist()
+const personaHit = new PersonaHit()
 
